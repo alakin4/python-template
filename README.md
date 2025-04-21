@@ -58,3 +58,12 @@ version so you do not need to install it separately.
 create a `.vscode` directory and add two `json` files:
 - `settings.json`
 - `extensions.json`
+
+### In
+```sh
+   cd my_project
+   uv init --no-workspace --bare
+```
+
+I do not need a workspace since this is a standalone project. This should create the
+python project structure. `--bare` is used to skip creating a README file
