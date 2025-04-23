@@ -59,11 +59,35 @@ create a `.vscode` directory and add two `json` files:
 - `settings.json`
 - `extensions.json`
 
-### In
+### Init project with pyproject.toml
 ```sh
    cd my_project
-   uv init --no-workspace --bare
+   uv init --bare
 ```
 
-I do not need a workspace since this is a standalone project. This should create the
-python project structure. `--bare` is used to skip creating a README file
+python project structure. `--bare` is used to skip creating a README file.
+
+### Add src file 
+with a main.py file
+add a `__init__.py` to make this into a package
+
+to run this with uv, you do `uv run src/main.py`
+
+requesting a python version usinfg uv `uv venv --python 3.11.6`. You can also install
+version of python for example by doing `uv python install 3.12.3` or `uv python install
+'>=3.8,<3.10'` or `uv python install 3.9 3.10 3.11`
+
+check [here](https://docs.astral.sh/uv/pip/environments/) to know more about how to use
+environments with uv. Here is a summary:
+1. `uv venv` to create a virtual env and activate it with `source .venv/bin/activate`.
+   To deactivate it, do `deactivate`
+
+### tests
+Add a tests folder
+
+### Add Dependencies
+
+use `uv add --dev pytest`. You can also add other dependencies like `pandas`, `numpy`.
+
+
+
