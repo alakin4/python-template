@@ -1,3 +1,10 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .env
+
+
 def main() -> str:
     """
     Main function to execute the script.
@@ -6,9 +13,9 @@ def main() -> str:
     the main logic. It can be modified to include any functionality
     required for the project.
     """
-    main_str = "Hello, World! this is a template for a Python projects."
-    print(main_str)
-    return main_str
+    greeting = os.getenv("GREETING", "Hello, World!")
+    print(greeting)
+    return greeting
 
 
 if __name__ == "__main__":

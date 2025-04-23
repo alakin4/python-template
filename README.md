@@ -142,3 +142,7 @@ This would help with reducing iterations in the CI pipeline.
 - A pre-commit hook can be triggered either by making a commit or manually by doing
   `pre-commit run`. The run command only runs against staged files but
   `pre-commit run --all-files` would do the job even on unn staged files
+
+- `.env` file
+  - You can also download a sample `.env` file  with just one variable `GREETING` variable.
+  - accessing the varaible in the `.env`file requires python-dotenv dependency.

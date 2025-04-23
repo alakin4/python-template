@@ -1,8 +1,15 @@
+import os
+
+from dotenv import load_dotenv
+
 from src.main import main
 
 
-def test_hello_world():
+def test_main_returns_env_variable():
     """
-    Test the main function to ensure it returns the expected string.
+    Test the main function to ensure it returns the expected environment variable.
     """
-    assert main() == "Hello, World! this is a template for a Python projects."
+    load_dotenv()
+    expected = os.getenv("GREETING")
+    result = main()
+    assert result == expected
