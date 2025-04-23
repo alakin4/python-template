@@ -89,5 +89,45 @@ Add a tests folder
 
 use `uv add --dev pytest`. You can also add other dependencies like `pandas`, `numpy`.
 
+> If you modify the toml file directly (not recommended), the lock file is out of sync
+> so it needs to be updated. We can verify of the lock file is out os synce using  `uv
+> lock --locked`.
 
 
+
+
+### CI pipeline
+https://www.youtube.com/watch?v=Y6D2XaFV3Cc
+
+- create a github action file under `.github/workflows/code-quality.yaml`
+- to have the code checks running in parallel, abstract away the installation of uv to a
+  composite action. This allows me to refer to the action as part of the steps within a
+  job.
+- add a linter to make sure everyone uses the same coding standards
+  - To check if the code is up to par, we can run `uvx ruff check .` and it would report
+    all ines that violate a rule.
+- add a formater. Checks how your code is visually structured, such as sorting of
+  imports, double quotes or single quotes, line-length, back slash, etc. we can use `uvx
+  ruff format .` to format all our commit code to the same configuration. Note that this
+  may not take into account the import formating, however, the fix flag of the ruff
+  check command can help:  `ruff check
+  --select I --fix .` 
+    - to check if all files are formated corectly, run `uvx ruff format --check .`
+- Type checking. As a dynamic languange, python can use type hints to write consistent
+  code. Unfortunately, `ruff` does not fix or catch type hints mistakes. It is good to
+  make sure that the documented types are consitent with the use, we can use pyright.
+  Ofcourse this needs to be added to the dev dependencies with `uv add --dev pyright`
+  then we can always use it by running `uv run pyright .`
+- testing 
+  - to check for the validity of the implementation. this can be done by running
+  `uv run pytest tests -v` or `uv run pytest -v`. The `-v` adds a bit more structured
+  output
+  - instead of just running unit tests, we can also track the test coverage by using
+    `pytest-cov` then run `uv run pytest -v --cov`. If you need to generate an xml file,
+    `uv run pytest -v --cov --cov-report=xml`. The coverage.xml file can be uploaded to
+    [codecov.io](https://about.codecov.io/). I prefer not to run coverage in production.
+
+
+
+### Pre-commit config
+This would help with reducing iterations in the CI pipeline

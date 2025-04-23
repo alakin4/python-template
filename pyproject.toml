@@ -8,7 +8,9 @@ dependencies = []
 [dependency-groups]
 dev = [
     "pandas>=2.2.3",
+    "pyright>=1.1.399",
     "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
 ]
 
 [tool.pytest.ini_options]
