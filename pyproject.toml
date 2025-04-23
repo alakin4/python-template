@@ -35,12 +35,17 @@ line-length = 88
 target-version = "py313"
 
 [tool.pyright]
-exclude = [
-    ".venv",
-]
+exclude = [".venv", "dist"]
 pythonVersion = "3.13"
 venvPath = "."
 venv = ".venv"
+autoSearchPaths = true
+
+# Suppress "import not found" errors
+reportMissingImports = false
+
+# Add your src/ folder to the import path
+extraPaths = ["src"]
 
 [tool.pylint.'MESSAGES CONTROL']
 disable = [

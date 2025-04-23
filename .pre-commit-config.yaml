@@ -15,7 +15,7 @@ repos:
         args: [ --fix ]
       # Run the formatter.
       - id: ruff-format
-  # Pyright in our own env for it to validate our imports. Poiting to the venv is set up in 
+  # Pyright in our own env for it to validate our imports. Pointing to the venv is set up in 
   # pyproject.toml
   - repo: https://github.com/RobertCraigie/pyright-python
     rev: v1.1.399

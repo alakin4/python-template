@@ -1,13 +1,16 @@
 {
   // Editor settings
   "editor.defaultFormatter": "charliermarsh.ruff",
+  "cSpell.words": ["uvx", "pyright", "pytest", "dotenv", "venv"],
   //Python settings
-  "python.analysis.autoSearchPaths": true,
-  "python.analysis.diagnosticSeverityOverrides": {
-    "reportMissingImports": "none"
-  },
+  // Uncomment if not set in pyproject.toml under [tool.pyright]
+  //"python.analysis.autoSearchPaths": true,
+  //"python.analysis.diagnosticSeverityOverrides": {
+  //  "reportMissingImports": "none"
+  //},
+  //"python.analysis.extraPaths": ["${workspaceFolder}/src"],
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.extraPaths": ["${workspaceFolder}/src"],
+
   "python.envFile": "${workspaceFolder}/.env",
   "python.terminal.activateEnvironment": true,
   "rewrap.autoWrap.enabled": true,
