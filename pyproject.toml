@@ -12,6 +12,9 @@ build-backend = "hatchling.build"
 [tool.distutils.bdist_wheel]
 universal = true
 
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
 [dependency-groups]
 dev = [
     "pandas>=2.2.3",
