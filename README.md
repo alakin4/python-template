@@ -126,8 +126,19 @@ https://www.youtube.com/watch?v=Y6D2XaFV3Cc
     `pytest-cov` then run `uv run pytest -v --cov`. If you need to generate an xml file,
     `uv run pytest -v --cov --cov-report=xml`. The coverage.xml file can be uploaded to
     [codecov.io](https://about.codecov.io/). I prefer not to run coverage in production.
+- Build. Add step to build the project into a wheel: almost ready for distribution. 
 
 
 
 ### Pre-commit config
-This would help with reducing iterations in the CI pipeline
+This would help with reducing iterations in the CI pipeline.
+- You need to install [pre-commit](https://pre-commit.com/) on your machine. It might be
+  best to install this globally and not just for one project: use `pip install
+  pre-commit`  or  `brew install pre-commit`. remember to initialise the pre-commit hook
+  inside your repository (local) using `pre-commit install`. You should get a message
+  `pre-commit installed at .git/hooks/pre-commit`. Most of the setup in
+  `.pre-commit-config.yaml` is from
+  [here](https://docs.astral.sh/uv/guides/integration/pre-commit/)
+- A pre-commit hook can be triggered either by making a commit or manually by doing
+  `pre-commit run`. The run command only runs against staged files but
+  `pre-commit run --all-files` would do the job even on unn staged files
