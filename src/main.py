@@ -9,7 +9,8 @@ def main() -> str:
     """
     Main function to execute the script.
 
-    This function serves as the entry point for the script and contains the main logic. It can be modified to include any functionality required for the project.
+    This function serves as the entry point for the script and contains the main logic.
+    It can be modified to include any functionality required for the project.
     """
     greeting = os.getenv("GREETING", "Hello, World!")
     print(greeting)
