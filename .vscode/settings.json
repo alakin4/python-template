@@ -1,7 +1,11 @@
 {
   // Editor settings
   "editor.defaultFormatter": "charliermarsh.ruff",
+  "editor.formatOnSave": true,
+
+  // Spelling
   "cSpell.words": ["uvx", "pyright", "pytest", "dotenv", "venv"],
+
   //Python settings
   // Uncomment if not set in pyproject.toml under [tool.pyright]
   //"python.analysis.autoSearchPaths": true,

@@ -47,6 +47,7 @@ select = [
 ]
 
 ignore = [
+    "E501", # line too long
     "C901", # too complex
 ]
 
@@ -79,6 +80,10 @@ skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
+
+# Like Black, use 88 characters per line.
+docstring-code-format = true
+docstring-code-line-length = 88
 
 
 [tool.pyright]
