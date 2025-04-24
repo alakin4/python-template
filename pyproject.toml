@@ -37,6 +37,15 @@ target-version = "py313"
 
 exclude = ["jupyter_notebook_config.py", ".ruff_cache", "node_modules"]
 
+select = [
+    "E", # pycodestyle errors (settings from FastAPI)
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+]
+
 ignore = [
     "C901", # too complex
 ]
