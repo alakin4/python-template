@@ -6,6 +6,23 @@ how to keep things organized. For the most part, the template follows the [Pytho
 Packaging Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 which is intended to be followed by the larger community.
 
+## Project Structure
+
+   ```
+   .
+   ├── Dockerfile
+   ├── LICENSE
+   ├── README.md
+   ├── docker-dev.sh
+   ├── pyproject.toml
+   ├── src
+   │   ├── __init__.py
+   │   ├── main.py
+   ├── tests
+   │   └── test_main.py
+   └── uv.lock
+   ```
+
 ## Features
 
 - **Structured Codebase**: All source code resides in the `src/` directory, promoting a clean separation between application code and configuration files.
@@ -107,4 +124,9 @@ Ruff does not catch type hint issues. Use pyright:
         uv run pytest -v --cov --cov-report=xml
       ```
  ## Pre-commit Hooks
- 
+- Install `pre-commit` globally and initialize it in the repo as indicated above using `pre-commit install
+- Trigger manually using: `pre-commit run --all-files`
+
+## Environment Variables
+A `.env` file can be used (e.g. with `GREETING=Hello`).
+
