@@ -49,7 +49,7 @@ Ensure you have the following installed:
 
 1. **Clone the repository**:
 
-   ```bash
+   ```sh
    git clone https://github.com/alakin4/python-template.git
    cd python-template
 
@@ -66,28 +66,29 @@ Ensure you have the following installed:
 4. **Run tests**:
    ```sh
    uv run pytest tests -v or uv run pytest -v.
+   ```
    
 The `-v` adds a bit more structured output
 
 ## Running the Application
 Run the application from the entry point
-    ```sh
+   ```sh
     uv run src/main.py
-    ```
+   ```
 
 ## Virtual Environments with uv
 Create and activate a virtual environment:
-    ```sh
+   ```sh
     uv venv
     source .venv/bin/activate
-    ```
+   ```
 Run `deactivate` to Deactivate the virtual environment.
 
 ## Keeping Lock File in Sync
 If you modify `pyproject.toml`  directly, make sure to verify lock file sync:
-    ```sh
+   ```sh
     uv lock --locked
-    ```
+   ```
 ## Code Quality Checks
 * Check for rule violations:
     ```sh
