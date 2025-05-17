@@ -107,18 +107,19 @@ If you modify `pyproject.toml`  directly, make sure to verify lock file sync:
     ```
 ## Type Checking
 Ruff does not catch type hint issues. Use pyright:
-    ```sh
-        uv run pyright
-    ```
+   ```sh
+    uv run pyright
+   ```
+    
 ## Testing
 * Run tests:
-      ```sh
-        uv run pytest -v
-      ```
+  ```sh
+  uv run pytest -v
+  ``` 
 * With coverage tracking:
-      ```sh
-        uv run pytest -v --cov
-      ```
+  ```sh
+  uv run pytest -v --cov
+  ```
  * Generate XML report:
       ```sh
         uv run pytest -v --cov --cov-report=xml
